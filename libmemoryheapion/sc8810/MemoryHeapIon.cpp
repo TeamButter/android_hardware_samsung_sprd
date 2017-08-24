@@ -52,7 +52,7 @@ enum ION_SPRD_CUSTOM_CMD {
     ION_SPRD_CUSTOM_MSYNC
 };
 #else
-#include <linux/ion.h>
+#include "ion.h"
 #include <video/ion_sprd.h>
 #endif
 
