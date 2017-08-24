@@ -17,14 +17,14 @@
 
 LOCAL_PATH := $(call my-dir)
 
-supported_boards := \
-	sc8810 \
-	scx15 \
-
-ifneq (,$(filter $(supported_boards),$(TARGET_BOARD_PLATFORM)))
-include $(call all-makefiles-under,$(TARGET_BOARD_PLATFORM))
-endif
-
 ifeq ($(SOC_SCX30G_V2),true)
-include $(call all-makefiles-under,sc8830)
+	include $(call all-named-subdir-makefiles,sc8830)
+else 
+	ifeq ($(TARGET_BOARD_PLATFORM),scx15)
+		include $(call all-named-subdir-makefiles,scx15)
+	else
+		ifeq ($(TARGET_BOARD_PLATFORM),sc8810)
+			include $(call all-named-subdir-makefiles,sc8810)
+		endif
+	endif
 endif
