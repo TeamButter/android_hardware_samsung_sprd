@@ -8,24 +8,23 @@ DLOPEN_LIBQCAMERA:= 1
 
 LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH) \
-        $(LOCAL_PATH)/sc8810 \
+    $(LOCAL_PATH)/sc8810 \
 	$(LOCAL_PATH)/vsp/sc8810/inc	\
 	$(LOCAL_PATH)/vsp/sc8810/src \
 	$(LOCAL_PATH)/jpeg_fw_8810/inc \
 	$(LOCAL_PATH)/jpeg_fw_8810/src \
 	external/skia/include/images \
 	external/skia/include/core\
-        external/jhead \
-        external/sqlite/dist \
-        system/media/camera/include \
-        $(TOP)/hardware/sprd/libmemoryheapion/scx15 \
-	$(TOP)/hardware/sprd/kernel_headers/sc8810 \
-	$(TOP)/hardware/sprd/gralloc/sc8810 \
-	$(TOP)/hardware/sprd/mali/sc8810/src/ump/include \
+    external/jhead \
+    external/sqlite/dist \
+    system/media/camera/include \
+	$(TOP)/hardware/samsung/sprd/kernel_headers/sc8810 \
+	$(TOP)/hardware/samsung/sprd/gralloc/sc8810 \
+	$(TOP)/hardware/samsung/sprd/mali/sc8810/src/ump/include \
 
 LOCAL_SRC_FILES:= \
 	sc8810/SprdOEMCamera.cpp \
-        sc8810/SprdCameraHardwareInterface.cpp \
+    sc8810/SprdCameraHardwareInterface.cpp \
 	vsp/sc8810/src/vsp_drv_sc8810.c \
 	jpeg_fw_8810/src/jpegcodec_bufmgr.c \
 	jpeg_fw_8810/src/jpegcodec_global.c \
@@ -37,7 +36,7 @@ LOCAL_SRC_FILES:= \
 	jpeg_fw_8810/src/jpegenc_interface.c \
 	jpeg_fw_8810/src/jpegenc_malloc.c \
 	jpeg_fw_8810/src/jpegenc_api.c \
-        jpeg_fw_8810/src/jpegdec_bitstream.c \
+    jpeg_fw_8810/src/jpegdec_bitstream.c \
 	jpeg_fw_8810/src/jpegdec_frame.c \
 	jpeg_fw_8810/src/jpegdec_init.c \
 	jpeg_fw_8810/src/jpegdec_interface.c \
@@ -65,15 +64,15 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/sc8825/isp/inc \
 	external/skia/include/images \
 	external/skia/include/core\
-        external/jhead \
-        external/sqlite/dist \
+    external/jhead \
+    external/sqlite/dist \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL/source/include/video \
 	$(TOP)/device/sprd/common/libs/gralloc \
 	$(TOP)/device/sprd/common/libs/mali/src/ump/include
 
 LOCAL_SRC_FILES:= \
 	sc8825/src/SprdOEMCamera.c \
-        sc8825/src/SprdCameraHardwareInterface.cpp \
+    sc8825/src/SprdCameraHardwareInterface.cpp \
 	sc8825/src/cmr_oem.c \
 	sc8825/src/cmr_set.c \
 	sc8825/src/cmr_mem.c \
@@ -108,7 +107,7 @@ LOCAL_SRC_FILES:= \
 	jpeg_fw_8825/src/jpegenc_interface.c \
 	jpeg_fw_8825/src/jpegenc_malloc.c \
 	jpeg_fw_8825/src/jpegenc_api.c \
-        jpeg_fw_8825/src/jpegdec_bitstream.c \
+    jpeg_fw_8825/src/jpegdec_bitstream.c \
 	jpeg_fw_8825/src/jpegdec_frame.c \
 	jpeg_fw_8825/src/jpegdec_init.c \
 	jpeg_fw_8825/src/jpegdec_interface.c \
@@ -137,15 +136,15 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/sc8825/isp/inc \
 	external/skia/include/images \
 	external/skia/include/core\
-        external/jhead \
-        external/sqlite/dist \
+    external/jhead \
+    external/sqlite/dist \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL/source/include/video \
 	$(TOP)/device/sprd/common/libs/gralloc \
 	$(TOP)/device/sprd/common/libs/mali/src/ump/include
 
 LOCAL_SRC_FILES:= \
 	sc8825/src/SprdOEMCamera.c \
-        sc8825/src/SprdCameraHardwareInterface.cpp \
+    sc8825/src/SprdCameraHardwareInterface.cpp \
 	sc8825/src/cmr_oem.c \
 	sc8825/src/cmr_set.c \
 	sc8825/src/cmr_mem.c \
@@ -180,7 +179,7 @@ LOCAL_SRC_FILES:= \
 	jpeg_fw_8825/src/jpegenc_interface.c \
 	jpeg_fw_8825/src/jpegenc_malloc.c \
 	jpeg_fw_8825/src/jpegenc_api.c \
-        jpeg_fw_8825/src/jpegdec_bitstream.c \
+    jpeg_fw_8825/src/jpegdec_bitstream.c \
 	jpeg_fw_8825/src/jpegdec_frame.c \
 	jpeg_fw_8825/src/jpegdec_init.c \
 	jpeg_fw_8825/src/jpegdec_interface.c \
@@ -266,7 +265,7 @@ LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libcamera_client libskia li
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),sc8810)
-LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libmemoryheapion_sprd libcamera_client libskia libcutils libsqlite libhardware
+LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libmemoryheapion libcamera_client libskia libcutils libsqlite libhardware
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),sc8830)
