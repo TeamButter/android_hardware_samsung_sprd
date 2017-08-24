@@ -36,7 +36,8 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := \
 LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libcutils \
-	libutils
+	libutils \
+	libbinder
 
 LOCAL_MODULE_TAGS := optional
 
