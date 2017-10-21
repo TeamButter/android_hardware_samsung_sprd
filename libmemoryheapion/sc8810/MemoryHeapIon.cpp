@@ -53,7 +53,7 @@ enum ION_SPRD_CUSTOM_CMD {
 };
 #else
 #include "ion.h"
-#include <video/ion_sprd.h>
+#include "ion_sprd.h"
 #endif
 
 namespace android {
