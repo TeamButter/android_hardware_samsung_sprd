@@ -285,6 +285,12 @@ struct ion_custom_data {
 	unsigned long arg;
 };
 
+struct ion_mmu_data {
+	int fd_buffer;
+	unsigned long iova_addr;
+	size_t iova_size;
+};
+
 #define ION_IOC_MAGIC		'I'
 
 /**
