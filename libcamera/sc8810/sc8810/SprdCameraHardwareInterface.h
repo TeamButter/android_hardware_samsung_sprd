@@ -24,9 +24,6 @@
 //#include <binder/MemoryHeapBase.h>
 #include "MemoryHeapIon.h"
 #include <utils/threads.h>
-extern "C" {
-    #include <linux/android_pmem.h>
-}
 #include <sys/types.h>
 
 #include "SprdOEMCamera.h"
@@ -246,19 +243,7 @@ private:
                    const char *name);
     };
 
-    struct PmemPool : public MemPool {
-        PmemPool(const char *pmem_pool,
-                int buffer_size, int num_buffers,
-                int frame_size,
-                int frame_offset,
-                const char *name);
-        virtual ~PmemPool() { }
-        int mFd;
-        uint32_t mAlignedSize;
-        struct pmem_region mSize;
-    };
-
-    struct PreviewPmemPool : public PmemPool {
+    struct PreviewPmemPool : public AshmemPool {
         virtual ~PreviewPmemPool();
         PreviewPmemPool(int buffer_size, int num_buffers,
                         int frame_size,
@@ -266,10 +251,9 @@ private:
                         const char *name);
     };
 
-    struct RawPmemPool : public PmemPool {
+    struct RawPmemPool : public AshmemPool {
         virtual ~RawPmemPool();
-        RawPmemPool(const char *pmem_pool,
-                    int buffer_size, int num_buffers,
+        RawPmemPool(int buffer_size, int num_buffers,
                     int frame_size,
                     int frame_offset,
                     const char *name);

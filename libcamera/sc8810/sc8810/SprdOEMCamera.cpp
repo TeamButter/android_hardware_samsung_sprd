@@ -30,7 +30,7 @@
 
 #include "../sc8810/SprdOEMCamera.h"
 #include "jpeg_exif_header.h"
-#include "sprd_scale.h"
+#include <sprd_scale.h>
 #include "sprd_rotation.h"
 #include "jpegenc_api.h"
 #include "SprdCameraHardwareCapability.h"
