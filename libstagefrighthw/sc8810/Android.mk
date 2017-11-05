@@ -14,8 +14,9 @@ LOCAL_SHARED_LIBRARIES :=       \
         libutils                \
         libcutils               \
         libui                   \
-        libdl			\
-	libstagefright_foundation
+        libdl			        \
+        liblog                  \
+	    libstagefright_foundation
 LOCAL_MODULE := libstagefrighthw
 
 LOCAL_CFLAGS:= -DLOG_TAG=\"$(TARGET_BOARD_PLATFORM).libstagefright\"
