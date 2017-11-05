@@ -47,6 +47,7 @@ extern "C" {
 #endif
 
 //#define USE_ION_MEM		1
+#define HAL_PIXEL_FORMAT_YCBCR_420_SP 33 // 0x21
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(*x))
 #define PRINT_TIME 0
@@ -2203,10 +2204,10 @@ status_t strToFPS(const char *str, int &min, int &max) {
 
 	  ALOGV("preview-fps-range: %s", str);
 
-	  pDest = strrchr(str,(int)',');
+	  pDest = strrchr((char *) str, (int) ',');
 	   memcpy(strTmp, str, strlen(str) - strlen(pDest));
 	    min = atoi(strTmp);
-	    pDest = strrchr((const char *)str, (int)',');
+	    pDest = strrchr((char *) str, (int) ',');
 	    pDest++;
 	    strcpy(strTmp, pDest);
 	    max = atoi(strTmp);
@@ -3099,7 +3100,7 @@ status_t SprdCameraHardware::setPreviewWindow(preview_stream_ops *w)
     mParameters.getPreviewSize(&preview_width, &preview_height);
     ALOGV("%s: preview size: %dx%d.", __func__, preview_width, preview_height);
 #if CAM_OUT_YUV420_UV
-    int hal_pixel_format = HAL_PIXEL_FORMAT_YCbCr_420_SP;
+    int hal_pixel_format = HAL_PIXEL_FORMAT_YCBCR_420_SP;
 #else
     int hal_pixel_format = HAL_PIXEL_FORMAT_YCrCb_420_SP;
 #endif
