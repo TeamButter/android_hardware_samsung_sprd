@@ -20,7 +20,7 @@ LOCAL_C_INCLUDES := \
     system/media/camera/include \
 	$(TOP)/hardware/sprd/kernel_headers/sc8810 \
 	$(TOP)/hardware/sprd/gralloc/sc8810 \
-	$(TOP)/hardware/sprd/mali/sc8810/src/ump/include \
+	$(TOP)/hardware/sprd/mali/sc8810/src/ump/include
 
 LOCAL_SRC_FILES:= \
 	sc8810/SprdOEMCamera.cpp \
@@ -265,7 +265,7 @@ LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libcamera_client libskia li
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),sc8810)
-LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libmemoryheapion libcamera_client libskia libcutils libsqlite libhardware
+LOCAL_SHARED_LIBRARIES := libexif libutils libbinder libmemoryheapion libcamera_client libskia libcutils libsqlite libhardware libui libgui liblog
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),sc8830)
